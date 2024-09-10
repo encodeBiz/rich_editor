@@ -9,6 +9,7 @@ class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       appBar: AppBar(
         title: Text('Basic Demo'),
         actions: [
@@ -60,21 +61,19 @@ class BasicDemo extends StatelessWidget {
       ),
       body: RichEditor(
         key: keyEditor,
-        value: '''
-        Hello, This is a rich text Editor for Flutter. It supports most things like Bold, italics and underline.
-        As well as Subscript, Superscript, Colored text, Colors bg text and hyperlink.
-        Images and Videos are also supports
-        ''', // initial HTML data
+        value: null, // initial HTML data
         editorOptions: RichEditorOptions(
           placeholder: 'Start typing',
-          // backgroundColor: Colors.blueGrey, // Editor's bg color
+          baseTextColor: Colors.black,
+
+          // backgroundColor: Colors.red,
           // baseTextColor: Colors.white,
           // editor padding
           padding: EdgeInsets.symmetric(horizontal: 5.0),
           // font name
-          baseFontFamily: 'sans-serif',
+          // baseFontFamily: 'sans-serif',
           // Position of the editing bar (BarPosition.TOP or BarPosition.BOTTOM)
-          barPosition: BarPosition.TOP,
+          barPosition: BarPosition.BOTTOM,
         ),
 
         // You can return a Link (maybe you need to upload the image to your

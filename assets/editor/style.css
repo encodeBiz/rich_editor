@@ -16,7 +16,6 @@
 
 @charset "UTF-8";
 
-
 html {
   height: 100%;
 }
@@ -26,7 +25,8 @@ body {
   display: table;
   table-layout: fixed;
   width: 100%;
-  min-height:100%;
+  min-height: 100%;
+  background-color: rgb(246, 246, 254, 1);
 }
 
 #editor {
@@ -35,72 +35,66 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: rgb(246, 246, 254, 1);
 }
 
 #editor[placeholder]:empty:not(:focus):before {
   content: attr(placeholder);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 8px;
-    -webkit-margin-before: 0em;
+  margin-top: 0;
+  margin-bottom: 8px;
+  -webkit-margin-before: 0em;
 }
 
-
-// Thanks to Jonathan B (https://stackoverflow.com/a/23501094) for figuring that out
+/* // Thanks to Jonathan B (https://stackoverflow.com/a/23501094) for figuring that out */
 
 sup {
-    vertical-align: super;
+  vertical-align: super;
 }
 
 sub {
-    vertical-align: sub;
+  vertical-align: sub;
 }
 
 img {
-
-    max-width: 100%;
-    object-fit: contain;
-
+  max-width: 100%;
+  object-fit: contain;
 }
-
 
 /* change this when changing the class name of resizableImageClass in rich_text_editor.js */
 img.resizable {
-
   border: 1px solid gray;
 
   touch-action: none;
 
   /* This is suggested by the doc, but I'm not sure that it is required when there is no large borders around the image. */
   /* This makes things *much* easier */
- /* box-sizing: border-box;*/
-
+  /* box-sizing: border-box;*/
 }
 
-
 .rotate90deg {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .rotate180deg {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .rotate270deg {
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
 }
