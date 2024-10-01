@@ -18,6 +18,9 @@ dependencies:
   path: ^1.8.2
   xml2json: ^6.2.3
 
+dependency_overrides:
+  webview_flutter_android: 3.16.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -16,6 +16,7 @@ class RichEditor extends StatefulWidget {
   final RichEditorOptions? editorOptions;
   final Function(File image)? getImageUrl;
   final Function(File video)? getVideoUrl;
+  final Function()? onWindowFocus;
 
   RichEditor({
     Key? key,
@@ -23,6 +24,7 @@ class RichEditor extends StatefulWidget {
     this.editorOptions,
     this.getImageUrl,
     this.getVideoUrl,
+    this.onWindowFocus,
   }) : super(key: key);
 
   @override
@@ -117,7 +119,10 @@ class RichEditorState extends State<RichEditor> {
             // javascriptMode: JavascriptMode.unrestricted,
             // gestureNavigationEnabled: false,
             gestureRecognizers: [
-              Factory(() => VerticalDragGestureRecognizer()..onUpdate = (_) {}),
+              Factory(() => VerticalDragGestureRecognizer()
+                ..onUpdate = (_) {
+                  print('gesture');
+                }),
             ].toSet(),
             onLoadError: (controller, url, code, e) {
               print("error $e $code");
@@ -127,6 +132,7 @@ class RichEditorState extends State<RichEditor> {
                 'WebView Message: $consoleMessage',
               );
             },
+            onWindowFocus: (_) => widget.onWindowFocus?.call(),
           ),
         ),
         Visibility(
